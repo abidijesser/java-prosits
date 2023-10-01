@@ -7,7 +7,7 @@ public class ZooManagement {
 
         System.out.println("---------------------------------------");
 
-        Zoo zoo=new Zoo("My Zoo", "New York");
+        Zoo zoo=new Zoo("My Zoo", "New York", 25);
         zoo.animals=new Animal[zoo.nbrCages];
         System.out.println(zoo.toString());
 
@@ -36,13 +36,11 @@ public class ZooManagement {
 
         System.out.println(zoo.searchAnimal(dog)) ;
 
-        System.out.println(zoo.isZooFull()) ;
 
-        Zoo zoo2=new Zoo("My Zoo2", "los angeles");
-        zoo.animals=new Animal[zoo.nbrCages];
-        System.out.println(zoo2.toString());
 
-        System.out.println(" le zoo avec le plus d'animaux est: "+zoo2.comparerZoo(zoo, zoo2)) ;
+
+
+
 
 
     }
