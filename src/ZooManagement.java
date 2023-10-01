@@ -1,47 +1,26 @@
+import java.util.Scanner;
 public class ZooManagement {
+
+    int nbrCages = 20;
+    String zooName = "myZoo";
 
     public static void main(String[] args) {
 
-        Animal lion=new Animal("cats", "lion", 5, true);
-        System.out.println(lion.toString());
-
-        System.out.println("---------------------------------------");
-
-        Zoo zoo=new Zoo("My Zoo", "New York", 25);
-        zoo.animals=new Animal[zoo.nbrCages];
-        System.out.println(zoo.toString());
-
-        System.out.println("---------------------------------------");
-
-        Animal dog = new Animal("Canine", "Snoopy", 2, true);
-        System.out.println(dog.toString());
-
-        System.out.println("---------------------------------------");
-
-        zoo.displayZoo();
-
-        System.out.println("---------------------------------------");
-
-        System.out.println(zoo.addAnimal(lion)) ;
-        System.out.println(zoo.addAnimal(lion)) ;
-        System.out.println(zoo.addAnimal(dog)) ;
-        System.out.println(zoo.addAnimal(dog)) ;
-        System.out.println(zoo.searchAnimal(dog)) ;
-
-        System.out.println("---------------------------------------");
-
-        zoo.displayAnimals();
-
-        zoo.removeAnimal(dog);
-
-        System.out.println(zoo.searchAnimal(dog)) ;
+        ZooManagement zoo1 = new ZooManagement();
+        System.out.println("la Zoo "+zoo1.zooName +" comporte " + zoo1.nbrCages);
 
 
 
+        System.out.println("-------------------------------------------------------------");
 
+        Scanner sc = new Scanner(System.in);
+        System.out.println("saisir le nombre de cages :");
+        int nbrCagessaisie = sc.nextInt();
 
-
-
-
+        ZooManagement zoo2 = new ZooManagement();
+        zoo2.nbrCages = nbrCagessaisie;
+        //Etape optionelle
+        zoo2.zooName = "notMyZoo";
+        System.out.println(zoo2.zooName + " comporte " + zoo2.nbrCages);
     }
 }
