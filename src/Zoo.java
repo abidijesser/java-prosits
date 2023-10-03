@@ -1,15 +1,56 @@
+
 public class Zoo {
 
-    Animal [] animals;
-    String name, city;
-    final int nbrCages=25;
-    int nbrAnimals;
+    private Animal [] animals;
+    private String name;
+    private String city;
+    private final int nbrCages=25;
+    private int nbrAnimals;
 
     public Zoo(String name, String city){
-        animals=new Animal[nbrCages];
-        this.name=name;
-        this.city=city;
+        if (name !=""){
+            animals=new Animal[nbrCages];
+            this.name=name;
+            this.city=city;
+        }
 
+        else{
+            throw new IllegalArgumentException("Le nom d'un zoo ne doit pas être vide.");
+        }
+
+    }
+
+    public String getName(){
+        return name;
+    }
+
+    public String getCity(){
+        return city;
+    }
+
+    public int getNbrCages(){
+        return nbrCages;
+    }
+
+    public Animal[] getAnimals(){
+        return animals;
+    }
+
+    public void setName(String name){
+        if(name !=""){
+            this.name=name;
+        }
+        else{
+            throw new IllegalArgumentException("Le nom d'un zoo ne doit pas être vide.");
+        }
+    }
+
+    public void setCity(String city){
+        this.city=city ;
+    }
+
+    public void setAnimals(Animal[] animals){
+        this.animals=animals;
     }
 
     public void displayZoo(){
@@ -19,7 +60,7 @@ public class Zoo {
 
     public boolean addAnimal(Animal animal) {
         boolean resultat=false;
-        if ((nbrAnimals < nbrCages) && (searchAnimal(animal) == -1)) {
+        if ((isZooFull()== false) && (searchAnimal(animal) == -1)) {
             animals[nbrAnimals]=animal;
             nbrAnimals++ ;
             resultat=true;
