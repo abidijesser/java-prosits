@@ -1,8 +1,6 @@
 
 public class Zoo {
 
-    //abidi jasser
-
     private Animal [] animals;
     private String name;
     private String city;
