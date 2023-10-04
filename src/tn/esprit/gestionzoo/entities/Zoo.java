@@ -1,5 +1,4 @@
 package tn.esprit.gestionzoo.entities;
-import tn.esprit.gestionzoo.entities.Animal;
 
 public class Zoo {
 
@@ -17,7 +16,7 @@ public class Zoo {
         }
 
         else{
-            throw new IllegalArgumentException("Le nom d'un zoo ne doit pas être vide.");
+            System.out.println("Le nom d'un zoo ne doit pas être vide.");
         }
 
     }
@@ -47,7 +46,7 @@ public class Zoo {
             this.name=name;
         }
         else{
-            throw new IllegalArgumentException("Le nom d'un zoo ne doit pas être vide.");
+            System.out.println("Le nom d'un zoo ne doit pas être vide.");
         }
     }
 

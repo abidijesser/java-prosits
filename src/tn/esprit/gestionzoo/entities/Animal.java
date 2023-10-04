@@ -16,40 +16,48 @@ public class Animal {
         }
 
         else{
-            throw new IllegalArgumentException("Un animal ne peut pas avoir un âge négatif.");
+            System.out.println("Un animal ne peut pas avoir un âge négatif.");
         }
     }
 
     public String getName() {
+
         return name;
     }
 
     public String getFamily(){
+
         return family;
     }
 
     public int getAge(){
+
         return age;
     }
 
     public boolean getIsMammal(){
+
         return isMammal;
     }
 
     public void setAge(int age) {
+        if(age >0)
         this.age = age;
     }
 
     public void setFamily(String family) {
+
         this.family = family;
     }
 
     public void setName(String name) {
+
         this.name = name;
     }
 
     public void isMammal( boolean isMammal) {
-         this.isMammal= isMammal;
+
+        this.isMammal= isMammal;
     }
 
     @Override
