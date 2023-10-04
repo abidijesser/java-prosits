@@ -1,3 +1,7 @@
+package tn.esprit.gestionzoo.main;
+
+import tn.esprit.gestionzoo.entities.*;
+
 public class ZooManagement {
 
     public static void main(String[] args) {
@@ -8,7 +12,7 @@ public class ZooManagement {
         System.out.println("---------------------------------------");
 
         Zoo zoo=new Zoo("My Zoo", "New York");
-        zoo.animals=new Animal[zoo.nbrCages];
+        zoo.setAnimals(new Animal[zoo.getNbrCages()]);
         System.out.println(zoo.toString());
 
         System.out.println("---------------------------------------");
@@ -38,8 +42,8 @@ public class ZooManagement {
 
         System.out.println(zoo.isZooFull()) ;
 
-        Zoo zoo2=new Zoo("My Zoo2", "los angeles");
-        zoo.animals=new Animal[zoo.nbrCages];
+        Zoo zoo2=new Zoo("a", "los angeles");
+        zoo2.setAnimals(new Animal[zoo2.getNbrCages()]);
         System.out.println(zoo2.toString());
 
         System.out.println(" le zoo avec le plus d'animaux est: "+zoo2.comparerZoo(zoo, zoo2)) ;
