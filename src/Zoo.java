@@ -74,7 +74,7 @@ public class Zoo {
         int res=-1;
 
         for(int i=0; i<nbrAnimals; i++){
-            if(animal.name == animals[i].name){
+            if(animal.getName() == animals[i].getName()){
                 res=1;
             }
         }
@@ -85,7 +85,7 @@ public class Zoo {
     void displayAnimals(){
         System.out.println("la zoo "+name+" contient : ");
         for(int i=0; i<nbrAnimals;i++){
-            System.out.println(animals[i].name);
+            System.out.println(animals[i].getName());
         }
     }
 
@@ -93,7 +93,7 @@ public class Zoo {
 
         if (searchAnimal(animal) !=-1){
             for(int i=0; i<nbrAnimals;i++){
-                if(animal.name == animals[i].name){
+                if(animal.getName() == animals[i].getName()){
                     animals[i]=null;
                     nbrAnimals--;
                 }
