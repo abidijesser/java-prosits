@@ -77,7 +77,7 @@ public class Zoo {
 
     }
 
-    public int searchAnimal(Animal animal){
+     public int searchAnimal(Animal animal){
 
         int res=-1;
         for(int i=0; i<nbrAnimals; i++){
