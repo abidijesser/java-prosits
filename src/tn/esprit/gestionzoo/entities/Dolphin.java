@@ -1,6 +1,6 @@
 package tn.esprit.gestionzoo.entities;
 
-public class Dolphin extends Aquatic{
+final public class Dolphin extends Aquatic{
 
     protected float swimmingSpeed;
 

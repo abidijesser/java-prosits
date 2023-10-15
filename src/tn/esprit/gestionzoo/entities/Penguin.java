@@ -1,8 +1,8 @@
 package tn.esprit.gestionzoo.entities;
 
-public class Penguin extends Terrestrial{
+non-sealed public class Penguin extends Terrestrial{
 
-    protected float swimmingDepth ;
+    public float swimmingDepth ;
 
     public Penguin(String family, String name, int age, boolean isMammal, int nbrLegs, float swimmingDepth){
         super(family, name, age, isMammal, nbrLegs);

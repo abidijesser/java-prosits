@@ -19,7 +19,6 @@ public class Animal {
             System.out.println("Un animal ne peut pas avoir un âge négatif.");
         }
     }
-    
 
     public String getName() {
 

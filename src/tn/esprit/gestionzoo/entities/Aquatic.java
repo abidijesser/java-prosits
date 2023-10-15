@@ -1,6 +1,6 @@
 package tn.esprit.gestionzoo.entities;
 
-public class Aquatic extends Animal {
+sealed public class Aquatic  extends Animal permits Dolphin {
 
     protected String habitat;
 
