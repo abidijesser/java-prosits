@@ -65,9 +65,6 @@ public class ZooManagement {
         dolphin1.swim();
         shark.swim();
 
-        System.out.println("---------------------------------------");
-
-        Dolphin dolphin2 =new Dolphin("Aquatic","dolphin2", 2,false,"mer",15);
 
     }
 }
