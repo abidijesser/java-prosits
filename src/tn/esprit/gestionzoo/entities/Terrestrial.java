@@ -1,6 +1,6 @@
 package tn.esprit.gestionzoo.entities;
 
-sealed public class Terrestrial extends Animal permits Penguin{
+ non-sealed public class Terrestrial extends Animal {
 
     protected int nbrLegs;
 

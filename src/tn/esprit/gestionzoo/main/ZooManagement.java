@@ -51,20 +51,39 @@ public class ZooManagement {
         System.out.println("---------------------------------------");
 
         Dolphin dolphin1 =new Dolphin("Aquatic","dolphin", 2,false,"mer",15);
-        Penguin penguin1 = new Penguin("Terrestrial","penguin", 3,false,2,50);
-        Aquatic shark=new Aquatic("Aquatic","shark", 5,false,"mer");
+        Penguin penguin1 = new Penguin("Aquatic","penguin", 3,false,"terre et mer",50);
+        /* Aquatic shark=new Aquatic("Aquatic","shark", 5,false,"mer"); */
         Terrestrial cow=new Terrestrial("Terrestrial","la vache qui rit", 4,true,4);
 
         System.out.println(dolphin1);
         System.out.println(penguin1);
         System.out.println(cow);
-        System.out.println(shark);
+        /*System.out.println(shark);*/
 
         System.out.println("---------------------------------------");
 
         dolphin1.swim();
-        shark.swim();
+        /*shark.swim();*/
 
+        System.out.println(zoo.addAquaticAnimal(dolphin1));
+        /*System.out.println(zoo.addAquaticAnimal(shark));*/
 
+        System.out.println(zoo.searchAquaticAnimal(dolphin1));
+        System.out.println(zoo.isAquaticZooFull());
+
+        zoo.aquaticAnimals[0].swim();
+        /*zoo.aquaticAnimals[1].swim();*/
+
+        System.out.println("---------------------------------------");
+        System.out.println(zoo.maxPenguinSwimmingDepth());
+        System.out.println(zoo.addAquaticAnimal(penguin1));
+        System.out.println(zoo.maxPenguinSwimmingDepth());
+
+        System.out.println("---------------------------------------");
+
+        zoo.displayNumberOfAquaticsByType();
+        Dolphin dolphin2 =new Dolphin("Aquatic","dolphin2", 2,false,"mer",17);
+        System.out.println(zoo.addAquaticAnimal(dolphin2));
+        zoo.displayNumberOfAquaticsByType();
     }
 }

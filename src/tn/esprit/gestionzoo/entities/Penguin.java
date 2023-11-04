@@ -1,12 +1,26 @@
 package tn.esprit.gestionzoo.entities;
 
-non-sealed public class Penguin extends Terrestrial{
+non-sealed public class Penguin extends Aquatic{
 
-    public float swimmingDepth ;
+    protected float swimmingDepth ;
 
-    public Penguin(String family, String name, int age, boolean isMammal, int nbrLegs, float swimmingDepth){
-        super(family, name, age, isMammal, nbrLegs);
+    public Penguin(String family, String name, int age, boolean isMammal, String habitat, float swimmingDepth){
+        super(family, name, age, isMammal,habitat );
         this.swimmingDepth=swimmingDepth;
+    }
+
+     public Float getSwimmingDepth(){
+        return swimmingDepth;
+    }
+
+    public void setSwimmingDepth(float swimmingDepth){
+        this.swimmingDepth=swimmingDepth;
+    }
+
+
+
+    public void swim(){
+        System.out.println("This penguin is swimming.");
     }
 
     @Override
@@ -16,7 +30,7 @@ non-sealed public class Penguin extends Terrestrial{
                 ", name='" + name + '\'' +
                 ", age=" + age +
                 ", isMammal=" + isMammal +
-                ", habitat= '" +nbrLegs + "'"+
+                ", habitat= '" +habitat + "'"+
                 ", profondeur= '" +swimmingDepth+
                 '}';
     }

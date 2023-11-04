@@ -7,6 +7,9 @@ public class Zoo {
     private String city;
     private final int nbrCages=25;
     private int nbrAnimals;
+    public Aquatic[] aquaticAnimals= new Aquatic[10];
+
+    private int nbrAquaticAnimals;
 
     public Zoo(String name, String city){
         if (name !=""){
@@ -133,6 +136,64 @@ public class Zoo {
             z3=z1;
         }
         return z3;
+    }
+
+    public Boolean addAquaticAnimal(Aquatic aquatic){
+        boolean resultat=false;
+        if ((isAquaticZooFull()== false) && (searchAquaticAnimal(aquatic) == false)) {
+            aquaticAnimals[nbrAquaticAnimals]=aquatic;
+            nbrAquaticAnimals++ ;
+            resultat=true;
+        }
+        return resultat ;
+
+    }
+
+    public Boolean searchAquaticAnimal(Aquatic aquatic){
+
+        Boolean res=false;
+        for(int i=0; i<nbrAquaticAnimals; i++){
+            if(aquatic.getName() == aquaticAnimals[i].getName()){
+                res=true;
+            }
+        }
+
+        return res;
+    }
+
+    public boolean isAquaticZooFull(){
+        boolean aquaticzoofull=false;
+        if(nbrAnimals == 10){
+            aquaticzoofull=true;
+        }
+        return aquaticzoofull;
+    }
+
+    public float maxPenguinSwimmingDepth(){
+        float maxDepth=-1;
+        for(int i=0; i<nbrAquaticAnimals; i++){
+            if(aquaticAnimals[i] instanceof Penguin){
+                float penguinDepth = ((Penguin) aquaticAnimals[i]).swimmingDepth;
+                if( penguinDepth > maxDepth) {
+                    maxDepth=penguinDepth ;
+                }
+            }
+        }
+        return maxDepth;
+    }
+
+    public void displayNumberOfAquaticsByType(){
+        int dolphinNumber=0;
+        int penguinNumber=0;
+        for(int i=0; i<nbrAquaticAnimals; i++){
+            if(aquaticAnimals[i] instanceof Penguin){
+                penguinNumber +=1;
+            }
+            if(aquaticAnimals[i] instanceof Dolphin){
+                dolphinNumber +=1;
+            }
+        }
+        System.out.println("le nombre des Daulphins est: "+dolphinNumber+ " et le nombre des Penguin est: "+penguinNumber);
     }
 
     @Override

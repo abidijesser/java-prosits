@@ -1,6 +1,6 @@
 package tn.esprit.gestionzoo.entities;
 
-sealed public class Aquatic  extends Animal permits Dolphin {
+sealed public abstract class Aquatic  extends Animal permits Dolphin, Penguin {
 
     protected String habitat;
 
@@ -10,9 +10,7 @@ sealed public class Aquatic  extends Animal permits Dolphin {
 
     }
 
-    public void swim(){
-        System.out.println("This aquatic animal is swimming.");
-    }
+    public abstract void swim();
 
     @Override
     public  String toString(){
