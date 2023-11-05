@@ -1,6 +1,6 @@
 package tn.esprit.gestionzoo.entities;
 
-sealed public abstract class Aquatic  extends Animal permits Dolphin, Penguin {
+sealed abstract public class Aquatic extends Animal implements Carnivore<Food> permits Dolphin, Penguin  {
 
     protected String habitat;
 
@@ -11,6 +11,11 @@ sealed public abstract class Aquatic  extends Animal permits Dolphin, Penguin {
     }
 
     public abstract void swim();
+
+    @Override
+    public void eatMeat(Food meat){
+        System.out.println("the Aquatic " +getName()+ " is eating "+meat);
+    }
 
     @Override
     public boolean equals(Object obj){

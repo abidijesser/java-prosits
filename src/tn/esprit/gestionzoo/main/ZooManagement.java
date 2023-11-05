@@ -89,7 +89,7 @@ public class ZooManagement {
         System.out.println("---------------------------------------");
 
         System.out.println(dolphin1.equals(dolphin1));
-        Dolphin dolphin3 =new Dolphin("Aquatic","dolphin2", 2,false,"mer",19);
+        Dolphin dolphin3 =new Dolphin("Aquatic","dolphin3", 2,false,"mer",19);
         System.out.println(dolphin2.equals(dolphin3));
         System.out.println(dolphin1.equals(penguin1));
 
@@ -104,9 +104,12 @@ public class ZooManagement {
         Animal monkey = new Animal("Canine", "3anter", 2, false);
         zoo.addAnimal(monkey) ;
 
-
         /* instruction 34*/
-
         Animal oiseau2 = new Animal("Canine", "kissi", -2, false);
+
+        /* instruction 38*/
+        Terrestrial chat2=new Terrestrial("Terrestrial","mimi", 1,true,4);
+        chat2.eatMeat(Food.MEAT);
+        dolphin3.eatMeat(Food.MEAT);
     }
 }
