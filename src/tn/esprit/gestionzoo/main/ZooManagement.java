@@ -104,6 +104,9 @@ public class ZooManagement {
         Animal monkey = new Animal("Canine", "3anter", 2, false);
         zoo.addAnimal(monkey) ;
 
+
+        /* instruction 34*/
+
         Animal oiseau2 = new Animal("Canine", "kissi", -2, false);
     }
 }
