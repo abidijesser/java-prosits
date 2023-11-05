@@ -26,10 +26,10 @@ public class ZooManagement {
 
         System.out.println("---------------------------------------");
 
-        System.out.println(zoo.addAnimal(lion)) ;
-        System.out.println(zoo.addAnimal(lion)) ;
-        System.out.println(zoo.addAnimal(dog)) ;
-        System.out.println(zoo.addAnimal(dog)) ;
+        zoo.addAnimal(lion) ;
+        zoo.addAnimal(lion) ;
+        zoo.addAnimal(dog) ;
+        zoo.addAnimal(dog) ;
         System.out.println(zoo.searchAnimal(dog)) ;
 
         System.out.println("---------------------------------------");
@@ -92,5 +92,18 @@ public class ZooManagement {
         Dolphin dolphin3 =new Dolphin("Aquatic","dolphin2", 2,false,"mer",19);
         System.out.println(dolphin2.equals(dolphin3));
         System.out.println(dolphin1.equals(penguin1));
+
+        System.out.println("---------------------------------------");
+        /* instruction 33*/
+        System.out.println(zoo.nbrAnimals);
+        Animal chat = new Animal("Canine", "mimi", 2, true);
+        Animal oiseau = new Animal("Canine", "kissi", 2, false);
+        zoo.addAnimal(chat) ;
+        zoo.addAnimal(oiseau) ;
+        System.out.println(zoo.nbrAnimals);
+        Animal monkey = new Animal("Canine", "3anter", 2, false);
+        zoo.addAnimal(monkey) ;
+
+        Animal oiseau2 = new Animal("Canine", "kissi", -2, false);
     }
 }

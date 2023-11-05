@@ -8,15 +8,20 @@ sealed public class Animal permits Terrestrial, Aquatic{
     protected boolean isMammal;
     
     public Animal(String family, String name, int age, boolean isMammal){
-        if(age > 0){
-            this.family=family;
-            this.name=name;
-            this.age=age;
-            this.isMammal=isMammal;
-        }
 
-        else{
-            System.out.println("Un animal ne peut pas avoir un âge négatif.");
+        try{
+            if(age < 0){
+                throw new InvalidAgeException();
+            }
+            else{
+                this.family=family;
+                this.name=name;
+                this.age=age;
+                this.isMammal=isMammal;
+            }
+        }
+        catch(InvalidAgeException ex){
+            System.out.println(ex.getMessage());
         }
     }
 

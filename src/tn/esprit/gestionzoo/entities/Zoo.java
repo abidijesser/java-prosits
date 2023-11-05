@@ -5,8 +5,8 @@ public class Zoo {
     private Animal [] animals;
     private String name;
     private String city;
-    private final int nbrCages=25;
-    private int nbrAnimals;
+    private final int nbrCages=3;
+    public int nbrAnimals;
     public Aquatic[] aquaticAnimals= new Aquatic[10];
 
     private int nbrAquaticAnimals;
@@ -68,15 +68,25 @@ public class Zoo {
         System.out.println("name : '"+name+ "', city : '"+city+"', nombre de cages: '"+nbrCages+"'");
     }
 
-    public boolean addAnimal(Animal animal) {
-        boolean resultat=false;
-        if ((isZooFull()== false) && (searchAnimal(animal) == -1)) {
-            animals[nbrAnimals]=animal;
-            nbrAnimals++ ;
-            resultat=true;
-        }
-        return resultat ;
+    public void addAnimal(Animal animal) {
 
+        try{
+            if ((searchAnimal(animal) == -1)) {
+                if (isZooFull()) {
+                    throw new ZooFullException();
+                }
+                animals[nbrAnimals]=animal;
+                nbrAnimals++ ;
+                System.out.println("Animal ajouté avec succés");
+                System.out.println("Le nombre d'animaux maintenant est : "+nbrAnimals);
+            }
+            else{
+                System.out.println("Animal deja existe");
+            }
+        }
+        catch(ZooFullException ex){
+            System.out.println(ex.getMessage());
+        }
     }
 
      public int searchAnimal(Animal animal){
