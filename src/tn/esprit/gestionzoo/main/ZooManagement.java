@@ -85,5 +85,12 @@ public class ZooManagement {
         Dolphin dolphin2 =new Dolphin("Aquatic","dolphin2", 2,false,"mer",17);
         System.out.println(zoo.addAquaticAnimal(dolphin2));
         zoo.displayNumberOfAquaticsByType();
+
+        System.out.println("---------------------------------------");
+
+        System.out.println(dolphin1.equals(dolphin1));
+        Dolphin dolphin3 =new Dolphin("Aquatic","dolphin2", 2,false,"mer",19);
+        System.out.println(dolphin2.equals(dolphin3));
+        System.out.println(dolphin1.equals(penguin1));
     }
 }

@@ -13,6 +13,19 @@ sealed public abstract class Aquatic  extends Animal permits Dolphin, Penguin {
     public abstract void swim();
 
     @Override
+    public boolean equals(Object obj){
+
+        if (null == obj) return false;
+        if (this == obj) return true;
+
+        if (obj instanceof Aquatic aquatic){
+            return age == aquatic.age && name.equals(aquatic.name) && habitat.equals(aquatic.habitat);
+        }
+        return false;
+    }
+
+
+    @Override
     public  String toString(){
         return "Animal { " +
                 "family=' " + family + '\'' +
